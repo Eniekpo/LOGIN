@@ -1,5 +1,31 @@
 {% extends 'loginapp/base.html' %}
 
 {% block content %}
-<h1>SIGN IN PAGE</h1>
+<div class="container">
+<h1>LOGIN PAGE</h1>
+
+<form action="{% url 'signin' %}" method="post" class="row p-3 g-3 align-items-center">
+  {% csrf_token %}
+
+  <div class="col-8">
+    <div class="input-group">
+      <div class="input-group-text">Username</div>
+      <input type="text" class="form-control" id="username" name="username" placeholder="User Name" required>
+    </div>
+  </div>
+
+  <div class="col-8">
+    <div class="input-group">
+      <div class="input-group-text">Passwprd</div>
+      <input type="password" class="form-control" id="pass1" name="pass1" placeholder="Passwprd" required>
+    </div>
+  </div>
+
+  <div class="col-8">
+    <button type="submit" class="btn btn-primary">LOGIN</button>
+  </div>
+  
+</form>
+
+</div>
 {% endblock %}
